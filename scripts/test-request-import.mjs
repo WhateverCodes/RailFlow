@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { assertAppendOnlyRequests } from '../lib/request-import.ts';
+const rows=JSON.parse(readFileSync(new URL('../data/maintenance-requests.json',import.meta.url),'utf8'));
+assert.doesNotThrow(()=>assertAppendOnlyRequests([],rows));
+assert.doesNotThrow(()=>assertAppendOnlyRequests(rows,rows));
+assert.doesNotThrow(()=>assertAppendOnlyRequests(rows.slice(0,10),rows));
+assert.throws(()=>assertAppendOnlyRequests(rows,rows.slice(1)),/preserved/);
+assert.throws(()=>assertAppendOnlyRequests(rows,[{...rows[0],required_duration_mins:999},...rows.slice(1)]),/preserved/);
+assert.throws(()=>assertAppendOnlyRequests(rows,[{...rows[0],timestamp:'changed'},...rows.slice(1)]),/preserved/);
+console.log('6 source-import preservation checks passed.');
