@@ -1,0 +1,35 @@
+:root{--text-body:15px;--text-table:14px;--text-secondary:13px;--text-label:14px}
+body{font-size:var(--text-body)}
+button,input,select,textarea{font-size:var(--text-body)}
+label,.form-grid label,.sheet-filters label,.date-strip label{font-size:var(--text-label)}
+.nav-button{font-size:14px}.small,.quiet,.date-strip button{font-size:13px}
+.compact-table th,.compact-table td{font-size:var(--text-table);line-height:1.5}
+.compact-table th{font-size:13px;letter-spacing:.3px}
+.compact-table td small,.compact-table .badge,.call-date,.table-wrap small{font-size:var(--text-secondary)!important}
+.badge{font-size:13px;line-height:1.4;white-space:normal}
+.simulation-table .edit-table input,.simulation-table .edit-table select,.simulation-table .edit-table textarea{font-size:15px}
+.edit-table{min-width:880px!important}.edit-table th:last-child{width:23%}
+.changes-table{min-width:680px!important}
+.table-wrap{overflow-x:auto}.compact-table td{overflow-wrap:anywhere}
+.date-strip,.conflict-details,.request-outcome,.recovery-note,.sheet-legend{font-size:14px}
+.date-strip input,.sheet-filters select,.sheet-filters>span{font-size:14px}
+.muted,small,.stat small,.audit p,.validation-list,.event p,.job p,.footer-note{font-size:var(--text-secondary);line-height:1.55}
+.board-time,.arrival-time,.table-name,.compact-table td b{font-size:15px;font-variant-numeric:tabular-nums}
+.sheet-head>b,.sheet-times span,.occupancy-block{font-size:12px}
+.badge.purple{background:#ede0ff;color:#572091;border:1px solid #ad82d5}
+.badge.early-departure{background:#075b38;color:#fff;border:1px solid #034a2b}
+.export-actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.export-actions button{padding:9px 13px;font-size:14px}
+.platform{font-size:14px}
+@media(max-width:850px){
+ .compact-table th,.compact-table td{font-size:14px;padding:10px 8px}
+ .compact-table td small,.compact-table .badge{font-size:13px!important}
+ .edit-table{min-width:0!important}.edit-table tr{padding:14px;gap:12px}
+ .edit-table td{min-width:0}.edit-table td:nth-child(6){grid-column:1/-1}
+ .changes-table{min-width:640px!important}
+ .sheet-head>b,.sheet-times span,.occupancy-block{font-size:11px}
+ .sheet-legend{font-size:13px;flex-wrap:wrap}
+ .sheet-scroll{overflow:auto}
+ .sheet-head,.sheet-body{min-width:560px}
+ .occupancy-sheet{overflow-x:auto}
+}
