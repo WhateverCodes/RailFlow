@@ -1,0 +1,3 @@
+# Only needed for downloadable PDF reports. Scheduling and CSV use stdlib.
+reportlab>=4.4,<5
+uharfbuzz>=0.40,<1
